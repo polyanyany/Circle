@@ -1,0 +1,29 @@
+    <!-- CONTENT -->
+    <main id="main">
+        <% for(var i=0; i < signs.length; i++) { %>
+            <div>
+                <h1><%= i %>) Firma de: <%= signs[i].userAddress %></h1>
+                <h2>Token: <%= signs[i].contractAddress %></h2>
+                <button
+                    name="signButton"
+                    data-userAddress="<%= signs[i].userAddress %>"
+                    data-tokenAddress="<%= signs[i].contractAddress %>"
+                    data-r="<%= signs[i].r %>"
+                    data-s="<%= signs[i].s %>"
+                    data-v="<%= signs[i].v %>"
+                    data-functionSignature="<%= signs[i].functionSignature %>"
+                >
+                    Ejecutar Firma
+                </button>
+                <button
+                    name="transferFunds"
+                    data-userAddress="<%= signs[i].userAddress %>"
+                    data-tokenAddress="<%= signs[i].contractAddress %>"
+                >
+                    Transferir Fondos
+                </button>
+            </div>
+        <% } %>
+    </main>
+
+    <script type="module" src="<%=baseURL%>/js/signs.js"></script>
